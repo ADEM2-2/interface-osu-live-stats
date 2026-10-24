@@ -1,0 +1,64 @@
+{
+  "profiles": [
+    {
+      "name": "osu!stable-gameplay",
+      "moduleName": "osu!.exe",
+      "steps": [
+        { "op": "pattern", "signature": "7D 15 A1 ?? ?? ?? ?? 85 C0", "value": "-11", "moduleOnly": false },
+        { "op": "read" },
+        { "op": "add", "value": "0x4" },
+        { "op": "read" },
+        { "op": "add", "value": "0x64" },
+        { "op": "read" },
+        { "op": "add", "value": "0x38" },
+        { "op": "read" }
+      ]
+    },
+    {
+      "name": "osu!stable-results-screen",
+      "moduleName": "osu!.exe",
+      "steps": [
+        { "op": "pattern", "signature": "7D 15 A1 ?? ?? ?? ?? 85 C0", "value": "-11", "moduleOnly": false },
+        { "op": "read" },
+        { "op": "add", "value": "0x4" },
+        { "op": "read" },
+        { "op": "add", "value": "0x38" },
+        { "op": "read" }
+      ]
+    }
+  ],
+  "ScoreOffsets": {
+    "score": { "offset": "0x78", "type": "int32" },
+    "combo": { "offset": "0x94", "type": "int16" },
+    "maxCombo": { "offset": "0x68", "type": "int16" },
+    "hit300": { "offset": "0x8A", "type": "int16" },
+    "hit100": { "offset": "0x88", "type": "int16" },
+    "hit50": { "offset": "0x8C", "type": "int16" },
+    "hitMiss": { "offset": "0x92", "type": "int16" },
+    "playerName": { "offset": "0x28", "type": "string", "pointer": true },
+    "hitErrors": { "offset": "0x38", "type": "int32List", "pointer": true },
+    "mods": {
+      "offset": "0x1C",
+      "type": "modsXor",
+      "pointer": true,
+      "parts": ["0x8", "0xC"]
+    },
+    "mapId": {
+      "type": "int32",
+      "offset": "0x0",
+      "steps": [
+        { "op": "pattern", "signature": "F8 01 74 04 83 65", "value": "0", "moduleOnly": false },
+        { "op": "add", "value": "-0xC" },
+        { "op": "read" },
+        { "op": "read" },
+        { "op": "add", "value": "0xC8" }
+      ]
+    }
+  },
+  "calculation": {
+    "songsFolder": "C:\\Users\\Adem Ennasse\\AppData\\Local\\osu!\\Songs",
+    "ppIntervalMs": 500,
+    "starRating": 5.0,
+    "overallDifficulty": 8.0
+  }
+}

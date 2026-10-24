@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>osu! Companion</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="overlay">
+
+    <aside id="leaderboard">
+      <div id="player">
+        <span id="player-name">waiting</span>
+        <span id="player-rank">#----</span>
+      </div>
+      <ol id="lb-list"></ol>
+    </aside>
+
+    <header id="map-info">
+      <span id="map-id">mapID: ----</span>
+      <span id="bpm">BPM: --</span>
+      <span id="mods">mods: --</span>
+    </header>
+
+    <div id="combo-wrap">
+      <span id="combo">0</span>
+      <span id="combo-label">combo</span>
+    </div>
+
+    <div id="acc-wrap">
+      <span id="acc">0.00%</span>
+      <span id="acc-label">accuracy</span>
+    </div>
+
+    <div id="pp-wrap">
+      <div id="pp-track"><div id="pp-fill"></div></div>
+      <span id="pp-text">0 / 0pp</span>
+    </div>
+
+    <div id="ur-wrap">
+      <span id="ur-label">UR</span>
+      <div id="ur-track"><div id="ur-fill"></div></div>
+      <span id="ur-value">--</span>
+    </div>
+
+    <div id="status">waiting for osu!</div>
+  </div>
+
+  <script src="js/overlay.js"></script>
+</body>
+</html>
